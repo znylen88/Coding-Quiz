@@ -1,0 +1,54 @@
+.container {
+    max-width: 100%;
+}
+
+
+#highscores {
+    text-align: left;
+    color: teal;
+    font-weight: bold;
+    
+}
+
+#timer {
+    text-align: right;
+}
+
+#question {
+    display: inline-block;
+}
+
+.container2 {
+    
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    
+}
+
+.box {
+     
+    width: 100%;
+     margin-top: 20px;
+
+}
+
+.questionbutton {
+    
+    width: 185px;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    margin: 2px;
+    text-align: left;
+    border-color: black;
+    border-width: 1px;
+    font-weight: lighter;
+    
+}
+
+#finalscore {
+    
+    font-size: 32px;
+
+}

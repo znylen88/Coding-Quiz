@@ -1,0 +1,40 @@
+.container {
+    max-width: 100%;
+}
+
+
+#highscores {
+    text-align: left;
+    color: teal;
+    font-weight: bold;
+}
+
+#timer {
+    text-align: right;
+}
+
+h1 {
+    text-align: center;
+}
+
+#startquiz {
+    display: inline-block;
+}
+
+.container2 {
+    
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    
+}
+
+.startbutton {
+    width: 150px;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    font-weight: lighter;
+    border-width: 1px;
+    border-color: black;
+}
