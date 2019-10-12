@@ -6,6 +6,7 @@ var choice3 = document.getElementById("choice3");
 var choice4 = document.getElementById("choice4");
 var timer = document.getElementById("timer");
 var finalScore = document.getElementById("finalscore");
+var linkToStart = document.getElementById("linkToStart");
 
 var questions = [
     {
@@ -55,6 +56,8 @@ var score = 0;
 
 console.log(score);
 
+
+
 function renderQuestion() {
     for (var i = 0; i < questions.length; i++) {
         var q = questions[runningQuestion];
@@ -82,7 +85,7 @@ function checkAnswer(answer) {
     if (runningQuestion < lastQuestion) {
         runningQuestion++;
         renderQuestion();
-    }else{
+    } else {
         clearInterval(questionTimer);
         scoreRender();
     }
@@ -97,20 +100,23 @@ function renderCounter() {
         if (runningQuestion < lastQuestion) {
             runningQuestion++;
             renderQuestion();
-            }else{
-                clearInterval(questionTimer);
-            }
-        }   
+        } else {
+            clearInterval(questionTimer);
+        }
     }
+}
 
-    function scoreRender(){
-        finalscore.innerHTML = ("Your score is ") + score + ("/5!");
-        
-            
-            
-        console.log(score);
-        
-
-    }
-
+function scoreRender() {
+    finalscore.innerHTML = ("Your score is ") + score + ("/5!");
+    var initials = prompt("Enter Initials");
+    newBtn = document.createElement("button");
+            newBtn.innerHTML = ("Back to Start")
+            newBtn.set
+            linkToStart.appendChild(newBtn);
     
+            localStorage.setItem(initials, score);
+
+}
+
+
+

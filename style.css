@@ -38,3 +38,20 @@ h1 {
     border-width: 1px;
     border-color: black;
 }
+
+#renderHighscore {
+    width: auto;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    font-weight: lighter;
+    border-width: 1px;
+    border-color: black;
+    
+}
+
+.highScore {
+    text-align: center;
+    width: 100%;
+}
+
