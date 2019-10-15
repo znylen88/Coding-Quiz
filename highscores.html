@@ -38,6 +38,7 @@
                 <div class="highScore">
                     <button id="renderHighscore">Render Highscores</button>
                     <div id="listHighscores"></div>
+                    <br>
                 </div>
             </div>
         </div>
@@ -59,20 +60,33 @@
 
         var highScoreBtn = document.getElementById("renderHighscore");
         var listHighscores = document.getElementById("listHighscores");
-
+        
         highScoreBtn.addEventListener("click", function () {
-            alert("Couldn't get this to work");
+
+            for (i = 0; i < localStorage.length - 1; i++) {
+
+                newDiv = document.createElement("button");
+                secDiv = document.createElement("button");
+                newDiv.innerHTML = localStorage.getItem("Initials");
+                secDiv.innerHTML = localStorage.getItem("Score");
+                listHighscores.appendChild(newDiv);
+                listHighscores.appendChild(secDiv);
+                newDiv.style.backgroundColor = '#e2725b';
+                newDiv.style.width = '200px';
+                newDiv.style.color = 'white';
+                newDiv.style.border = 'none';
+                newDiv.style.margin = '1px';
+                secDiv.style.backgroundColor = '#e2725b';
+                secDiv.style.width = '200px';
+                secDiv.style.color = 'white';
+                secDiv.style.border = 'none';
+                secDiv.style.margin = '1px';
+            }
+        }
+    )
 
 
-            newDiv = document.createElement("div");
-            newDiv.innerHTML = "" + initials + ":" + score;
-            listHighscores.appendChild(newDiv);
-        });
-
-
-
-
-    </script>
+</script>
 
 </body>
 

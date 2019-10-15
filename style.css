@@ -7,6 +7,7 @@
     text-align: left;
     color: teal;
     font-weight: bold;
+    
 }
 
 #timer {
@@ -47,11 +48,18 @@ h1 {
     font-weight: lighter;
     border-width: 1px;
     border-color: black;
+    margin-bottom: 20px;
     
 }
 
 .highScore {
     text-align: center;
     width: 100%;
+}
+
+#listHighscores {
+    color: red;
+    
+    
 }
 

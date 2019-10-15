@@ -1,3 +1,5 @@
+//Global Variables
+
 var start = document.getElementById("startbutton");
 var question = document.getElementById("question");
 var choice1 = document.getElementById("choice1");
@@ -7,6 +9,11 @@ var choice4 = document.getElementById("choice4");
 var timer = document.getElementById("timer");
 var finalScore = document.getElementById("finalscore");
 var linkToStart = document.getElementById("linkToStart");
+var enterInitials = document.getElementById("enterInitials");
+var highScoreBtn = document.getElementById("renderHighscore");
+var listHighscores = document.getElementById("listHighscores");
+
+//Questions Object
 
 var questions = [
     {
@@ -55,6 +62,7 @@ var questionTimer;
 var score = 0;
 
 
+//Render Question Function
 
 function renderQuestion() {
     for (var i = 0; i < questions.length; i++) {
@@ -74,6 +82,8 @@ renderQuestion();
 renderCounter();
 questionTimer = setInterval(renderCounter, 1000);
 
+//Check Answer Function
+
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
         score += 2;
@@ -91,6 +101,8 @@ function checkAnswer(answer) {
     }
 }
 
+//Render Counter Function
+
 function renderCounter() {
     if (count <= questionTime) {
         timer.innerHTML = "Time: " + count;
@@ -106,9 +118,33 @@ function renderCounter() {
     }
 }
 
+//Render Final Score
+
 function scoreRender() {
     finalscore.innerHTML = ("Your score is ") + score + ("/10!");
-    var initials = prompt("Enter Initials");
+
+    //Create Initials Element
+
+    newTextBox = document.createElement("input");
+    newTextBox.setAttribute("type", "text");
+    newTextBox.setAttribute("placeholder", "Enter Initials");
+    enterInitials.appendChild(newTextBox);
+
+    //Create Initials Enter Button
+
+    newEnterButton = document.createElement("input");
+    newEnterButton.setAttribute("type", "submit");
+    newEnterButton.innerHTML = ("Submit");
+    enterInitials.appendChild(newEnterButton);
+    newEnterButton.style.backgroundColor = '#e2725b';
+    newEnterButton.style.color = 'white';
+    newEnterButton.style.borderRadius = '10px'
+    newEnterButton.style.fontSize = '12px';
+    newEnterButton.style.border = '1px solid black';
+    newEnterButton.style.fontWeight = 'lighter';
+
+    //Create "Back to Start" Button
+
     newBtn = document.createElement("button");
     newBtn.innerHTML = ("Back to Start")
     linkToStart.appendChild(newBtn);
@@ -119,16 +155,45 @@ function scoreRender() {
     newBtn.style.fontWeight = 'lighter';
     newBtn.style.width = '150px';
 
-    console.log(initials);
-    console.log(score);
+    var initialsForm = document.getElementById("initialsForm");
 
-    localStorage.setItem(initials, score)
+    initialsForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    //if (initials && score) {
-    //localStorage.setItem(initials, score);
-    //finalScore.innerHTML = localStorage.getItem(initials, score);
+        //Store Items to Local Storage
 
+        localStorage.setItem("Initials", newTextBox.value);
+        localStorage.setItem("Score", score);
+
+        console.log(newTextBox.value);
+        console.log(score)
+
+    }
+    )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //for (let i = 0; i < localStorage.length; i++) {
     //const initials = localStorage.initials(i);
