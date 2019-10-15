@@ -16,11 +16,13 @@
 <body>
   <div class="container">
     <div class="row">
+      <!-- Link to Highscores Page -->
       <div id="highscores" class="col-sm" onclick="window.location.href='highscores.html'">
         View Highscores
       </div>
       <div class="col-sm">
       </div>
+      <!-- Timer -->
       <div id="timer" class="col-sm">
       </div>
     </div>
@@ -31,10 +33,12 @@
   <div class="container2">
     <div class="row">
       <div id="question" class="col-sm-12">
+        <!-- Questions-->
         <p>Question</p>
       </div>
       <br>
       <div class="box">
+        <!-- Question Buttons-->
         <button id="choice1" class="questionbutton" onclick="checkAnswer('1')">Answer1</button>
         <div></div>
         <button id="choice2" class="questionbutton" onclick="checkAnswer('2')">Answer2</button>
@@ -44,11 +48,12 @@
         <button id="choice4" class="questionbutton" onclick="checkAnswer('4')">Answer4</button>
         <br>
         <br>
+        <!-- Render Final Score w/ Link to Start -->
         <div id="finalscore"></div>
         <div id="linkToStart" onclick="window.location.href='index.html'"></div>
         <div id="nameButton"></div>
       </div>
-  </div>
+    </div>
 
 
     <!-- Optional JavaScript -->

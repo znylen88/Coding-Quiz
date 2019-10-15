@@ -17,11 +17,13 @@
     <div id="start">
         <div class="container">
             <div class="row">
+                <!-- Link back to Start Page-->
                 <div id="highscores" class="col-sm" onclick="window.location.href='index.html'">
                     Back to Start
                 </div>
                 <div class="col-sm">
                 </div>
+                <!-- Timer -->
                 <div id="timer" class="col-sm">
                     Time: 0
                 </div>
@@ -54,18 +56,21 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-        
+
         var highScoreBtn = document.getElementById("renderHighscore");
         var listHighscores = document.getElementById("listHighscores");
 
         highScoreBtn.addEventListener("click", function () {
+            alert("Couldn't get this to work");
+
 
             newDiv = document.createElement("div");
-            newDiv.innerHTML = localStorage.getItem
+            newDiv.innerHTML = "" + initials + ":" + score;
             listHighscores.appendChild(newDiv);
+        });
 
 
-        })
+
 
     </script>
 

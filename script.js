@@ -54,8 +54,6 @@ const questionTime = 15;
 var questionTimer;
 var score = 0;
 
-console.log(score);
-
 
 
 function renderQuestion() {
@@ -78,7 +76,9 @@ questionTimer = setInterval(renderCounter, 1000);
 
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
-        score++;
+        score += 2;
+        if (count <= 10)
+            score += 1;
         //alert("Correct!");
     }
     count = 0;
@@ -107,16 +107,39 @@ function renderCounter() {
 }
 
 function scoreRender() {
-    finalscore.innerHTML = ("Your score is ") + score + ("/5!");
+    finalscore.innerHTML = ("Your score is ") + score + ("/10!");
     var initials = prompt("Enter Initials");
     newBtn = document.createElement("button");
-            newBtn.innerHTML = ("Back to Start")
-            newBtn.set
-            linkToStart.appendChild(newBtn);
-    
-            localStorage.setItem(initials, score);
+    newBtn.innerHTML = ("Back to Start")
+    linkToStart.appendChild(newBtn);
+    newBtn.style.backgroundColor = 'teal';
+    newBtn.style.color = 'white';
+    newBtn.style.borderRadius = '10px'
+    newBtn.style.border = '1px solid black';
+    newBtn.style.fontWeight = 'lighter';
+    newBtn.style.width = '150px';
+
+    console.log(initials);
+    console.log(score);
+
+    localStorage.setItem(initials, score)
+
+    //if (initials && score) {
+    //localStorage.setItem(initials, score);
+    //finalScore.innerHTML = localStorage.getItem(initials, score);
 
 }
+
+    //for (let i = 0; i < localStorage.length; i++) {
+    //const initials = localStorage.initials(i);
+    //const score = localStorage.getItem(initials);
+
+
+
+
+
+
+
 
 
 
